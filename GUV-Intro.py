@@ -42,3 +42,10 @@ def no_list_while_gcd(m,n):
         else:
             i = i-1
 print("While loop no list:", no_list_while_gcd(14,63))
+
+
+def GCD_Theory(a,b):
+    while b != 0:
+        a,b = b, a % b
+    return a
+print("Based on the theory:", GCD_Theory(14,63))
