@@ -15,7 +15,6 @@ def gcd(m,n):
     return (fc[-1])
 print("Optimized GCD:",gcd(14,63))
 
-
 # OPTIMIZED EXAMPLE
 def opt_gcd(m,n):
     fc=[]
