@@ -15,3 +15,9 @@ if result != -1:
 else:
     print("Not Found")
 
+# BINARY SEARCH
+def binarySearch(arr, target):
+    n = len(arr)
+    left = 0
+    right = n-1
+    

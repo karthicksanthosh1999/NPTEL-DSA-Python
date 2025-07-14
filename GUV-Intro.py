@@ -42,6 +42,15 @@ def no_list_while_gcd(m,n):
             i = i-1
 print("While loop no list:", no_list_while_gcd(14,63))
 
+# EUCLID'S ALGORITHM
+def euclid_gcd(m,n):
+    if m < n:
+        m,n = n,m
+    while (m%n != 0):
+        d =  m - n
+        m,n = (max(n,d), min(n,d))
+    return n
+print("Euclid Algorithm :" , euclid_gcd(14,63))
 
 def GCD_Theory(a,b):
     while b != 0:
