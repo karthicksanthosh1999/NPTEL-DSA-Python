@@ -1,23 +1,15 @@
 mylist = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
-targetValue = 9
+targetValue = 5
 
 # LINEAR SEARCH
 def linearSearch(arr,target):
     n = len(arr)
-    for i in range(n):
+    for i in range(0,n):
         if arr[i] == target:
+            is_found = True
             return i
-    return -1
-result = linearSearch(mylist, targetValue)
+        if is_found:
+            break;
+    return None
 
-if result != -1:
-    print("Found the index:", result)
-else:
-    print("Not Found")
-
-# BINARY SEARCH
-def binarySearch(arr, target):
-    n = len(arr)
-    left = 0
-    right = n-1
-    
+print(linearSearch(mylist, targetValue))
