@@ -57,3 +57,4 @@ def GCD_Theory(a,b):
         a,b = b, a % b
     return a
 print("Based on the theory:", GCD_Theory(14,63))
+
