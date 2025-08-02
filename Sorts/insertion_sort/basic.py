@@ -1,4 +1,4 @@
-arr = [100,40,20,2,5,8,90]
+arr = [3,2,10,1,5,2,1]
 def insertionSort(arr):
     n =len(arr)    
     for i in range(1,n):
