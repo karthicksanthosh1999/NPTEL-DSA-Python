@@ -43,5 +43,34 @@ def second_smallest_element_in_array(arr):
             second_smallest = arr[i]
     return {smallest, second_smallest}
 
-print(second_smallest_element_in_array(array))
+# print(second_smallest_element_in_array(array))
+
+# Q. Given an array, arr[] of n integers, and an integer element x, find whether element x is present in the array. Return the index of the first occurrence of x in the array, or -1 if it doesn't exist.
+
+def search(arr, x):
+    n = len(arr)
+    is_found= False
+    for i in range(0,n):
+        if arr[i] == x:
+            is_found = True
+            return i
+        if is_found:
+            break
+    return -1
+    
+        
+# print(search(array, 100)
+
+# Q.
+arr = [-5, 1, 4, 2, 12]
+
+def alternate_elements(arr):
+    n =len(arr)
+    elements =[]
+    for i in range(0,n):
+        if i%2 == 0:
+            elements.append(arr[i])
+
+    return elements
+print(alternate_elements(arr))
 

@@ -1,3 +1,5 @@
+
+                        #  <-- WEEK ONE CLASS -->
 # SIMPLE EXAMPLE
 def gcd(m,n):
     fm=[]
@@ -13,7 +15,7 @@ def gcd(m,n):
         if f in fn:
             fc.append(f)
     return (fc[-1])
-print("Optimized GCD:",gcd(14,63))
+# print("Optimized GCD:",gcd(14,63))
 
 # OPTIMIZED EXAMPLE
 def opt_gcd(m,n):
@@ -22,7 +24,7 @@ def opt_gcd(m,n):
         if m%f == 0 and n%f == 0:
             fc.append(f)
     return fc
-print("Optimized GCD:",opt_gcd(14,63))
+# print("Optimized GCD:",opt_gcd(14,63))
 
 # NO LIST
 def no_list_gcd(m,n):
@@ -30,7 +32,7 @@ def no_list_gcd(m,n):
         if m%f ==0 and n%f == 0:
             mrfc = f
     return mrfc
-print("No list GCD:", no_list_gcd(14, 63))
+# print("No list GCD:", no_list_gcd(14, 63))
 
 # NO LIST WHILE LOOP
 def no_list_while_gcd(m,n):
@@ -40,7 +42,7 @@ def no_list_while_gcd(m,n):
             return(i)
         else:
             i = i-1
-print("While loop no list:", no_list_while_gcd(14,63))
+# print("While loop no list:", no_list_while_gcd(14,63))
 
 # EUCLID'S ALGORITHM
 def euclid_gcd(m,n):
@@ -50,11 +52,36 @@ def euclid_gcd(m,n):
         d =  m - n
         m,n = (max(n,d), min(n,d))
     return n
-print("Euclid Algorithm :" , euclid_gcd(14,63))
+# print("Euclid Algorithm :" , euclid_gcd(14,63))
 
 def GCD_Theory(a,b):
     while b != 0:
         a,b = b, a % b
     return a
-print("Based on the theory:", GCD_Theory(14,63))
+# print("Based on the theory:", GCD_Theory(14,63))
 
+#                                                   <-- WEEK TWO CLASS -->
+
+# Q. Is the number is Prime Number or Not
+
+def factors(n):
+    factorList = []
+    for i in range(1,n+1):
+        if n%i == 0:
+            factorList.append(i)
+    return factorList
+
+def isPrime(n):
+    return (factors(n) == [1,n])
+
+print(isPrime(15))
+
+# Q. List all prime numbers in given number
+
+def primesUptoN(n):
+    primeList = []
+    for i in range(1,n+1):
+        if isPrime(i):
+            primeList.append(i)
+    return primeList
+print(primesUptoN(100))
