@@ -61,16 +61,36 @@ def search(arr, x):
         
 # print(search(array, 100)
 
-# Q.
-arr = [-5, 1, 4, 2, 12]
+# Q. Alternate elements of an array
 
-def alternate_elements(arr):
-    n =len(arr)
-    elements =[]
-    for i in range(0,n):
-        if i%2 == 0:
-            elements.append(arr[i])
+def getAlternatesRecr(arr,idx,res):
+    if idx < len(arr):
+        res.append(arr[idx])
+        return getAlternatesRecr(arr,idx + 2, res)
 
-    return elements
-print(alternate_elements(arr))
+def getAlternates(arr):
+    res =[]
+    getAlternatesRecr(arr,0,res)
+    return res
 
+# if __name__ == "__main__":
+#     arr = [10, 20, 30, 40, 50]
+#     res = getAlternates(arr)
+#     print(" ".join(map(str,res)))
+
+# Q.Remove duplicates from Sorted Array
+
+def removeDublicates(arr):
+    n=len(arr)
+    idx = 1
+    for i in range(1,n):
+        if arr[i] != arr[i-1]:
+            arr[idx] = arr[i]
+            idx += 1
+    return idx 
+
+if __name__ == "__main__":
+    arr = [1, 2, 2, 3, 4, 4, 4, 5, 5]
+    newSize = removeDublicates(arr)
+    for i in range(newSize):
+        print(arr[i], end=" ")
