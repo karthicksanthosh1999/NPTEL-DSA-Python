@@ -89,8 +89,41 @@ def removeDublicates(arr):
             idx += 1
     return idx 
 
+# if __name__ == "__main__":
+#     arr = [1, 2, 2, 3, 4, 4, 4, 5, 5]
+#     newSize = removeDublicates(arr)
+#     for i in range(newSize):
+#         print(arr[i], end=" ")
+
+# Q. Generating All Subarrays
+
+def allSubarray(arr, start, end):
+    n=len(arr)
+    if end == n:
+        return
+    elif start > end:
+        return allSubarray(arr, 0, end + 1)
+    else:
+        print(arr[start:end+1])
+        return allSubarray(arr, start + 1, end)
+
+    
+# allSubarray([1, 2, 3], 0, 0)
+
+# Q. Rotate an Array - Clockwise or Right
+
+def rotate_array_clockwise(arr,d):
+    n= len(arr)
+    for _ in range(d):
+        last = arr[n-1]
+        for i in range(n-1, 0, -1):
+            arr[i] = arr[i-1]
+        arr[0] = last
+
 if __name__ == "__main__":
-    arr = [1, 2, 2, 3, 4, 4, 4, 5, 5]
-    newSize = removeDublicates(arr)
-    for i in range(newSize):
+    arr = [1, 2, 3, 4, 5, 6]
+    d = 2
+    rotate_array_clockwise(arr,2)
+
+    for i in range(len(arr)):
         print(arr[i], end=" ")
